@@ -1,5 +1,5 @@
 # chat-bot
-Simple Node/API.AI bot
+Simple Node/API.AI bot using api.ai. 
 
 Chat-bot is a Node/Express chat bot. 
 
