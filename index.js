@@ -1,7 +1,6 @@
 'use strict';
 
-
-const APIAI_TOKEN =  ENV["API_TOKEN"]
+const APIAI_TOKEN =  API_TOKEN
 const APIAI_SESSION_ID = "cat";
 
 const express = require('express');
