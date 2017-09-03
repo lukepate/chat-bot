@@ -1,6 +1,5 @@
 'use strict';
 
-// const APIAI_TOKEN = "ef171aa6f9d34be384da413be9c9eb47";
 const APIAI_TOKEN =  config.API_TOKEN;
 const APIAI_SESSION_ID = "cat";
 
