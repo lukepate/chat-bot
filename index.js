@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/views')); // html
 app.use(express.static(__dirname + '/public')); // js, css, images
 
 const server = app.listen(process.env.PORT || 5000, () => {
-  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
+  console.log('Express server listening on port 5000', app.settings.env);
 });
 
 const io = require('socket.io')(server);
@@ -46,6 +46,5 @@ io.on('connection', function(socket) {
     });
 
     apiaiReq.end();
-
   });
 });

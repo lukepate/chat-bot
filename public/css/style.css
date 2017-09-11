@@ -39,6 +39,7 @@ h1 {
 section {
   margin: 1.5em auto;
   width: 500px;
+  margin-top: 9%;
 }
 button {
   display: block;

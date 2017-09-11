@@ -5,30 +5,37 @@ const socket = io();
 const outputYou = document.querySelector('.output-you');
 const outputBot = document.querySelector('.output-bot');
 
+// HTML5 SPEECH API
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
+// SELECTING SPEECH LANGUAGE
 recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
+// Click For Starting Speech listen
 document.querySelector('button').addEventListener('click', () => {
   recognition.start();
 });
 
+// EVENT FOR STARTING SPEECH
 recognition.addEventListener('speechstart', () => {
   console.log('Speech has been detected.');
 });
 
+
 recognition.addEventListener('result', (e) => {
   console.log('Result has been detected.');
-
+  co
   let last = e.results.length - 1;
   let text = e.results[last][0].transcript;
 
+  // SETS YOU TEXT TO C
   outputYou.textContent = text;
   console.log('Confidence: ' + e.results[0][0].confidence);
 
+  // SOCKET.EMIT FOR SENDING OBJECTS
   socket.emit('chat message', text);
 });
 
@@ -49,7 +56,7 @@ function synthVoice(text) {
 
 socket.on('bot reply', function(replyText) {
   synthVoice(replyText);
-
+  console.log(replyText)
   if(replyText == '') replyText = '(No answer...)';
   outputBot.textContent = replyText;
 });
